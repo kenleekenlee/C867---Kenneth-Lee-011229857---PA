@@ -26,5 +26,32 @@ int main()
     cout << "Student Name: Kenneth Lee" << endl;
 
 
+
+// pseudocode below, update program
+    classRoster.printAll();
+
+    classRoster.printInvalidEmails();
+
+
+
+    //loop through classRosterArray and for each element:
+
+    classRoster.printAverageDaysInCourse(/*current_object's student id*/);
+
+
+
+Note: For the current_object's student id, use an accessor (i.e., getter) for the classRosterArray to access the student id.
+
+
+
+classRoster.printByDegreeProgram(SOFTWARE);
+
+classRoster.remove("A3");
+
+classRoster.printAll();
+
+classRoster.remove("A3");
+
+//expected: the above line should print a message saying such a student with this ID was not found.
 }
 

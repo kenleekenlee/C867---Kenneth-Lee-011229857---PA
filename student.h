@@ -1,12 +1,16 @@
 #pragma once
-class student
+#include "degree.h"
+#include <string>
+using namespace std;
+
+class Student
 {
 public:
 	//Default constructor
-	student();
+	Student();
 
 	//Constructor
-	student(string studentID, 
+	Student(string studentID, 
 		string firstName, 
 		string lastName, 
 		string emailAddress, 

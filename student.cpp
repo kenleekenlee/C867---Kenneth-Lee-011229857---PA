@@ -4,7 +4,7 @@
 using namespace std;
 
 //Default constructor
-student::student() {
+Student::Student() {
 	this->studentID = "";
 	this->firstName = "";
 	this->lastName = "";
@@ -16,8 +16,8 @@ student::student() {
 	this->degreeProgram;
 }
 
-//Constructor
-student::student(string studentID, string firstName, string lastName, string emailAddress, int age, int daysInCourse[], DegreeProgram degreeprogram) {
+//Constructor with all parameters
+Student::Student(string studentID, string firstName, string lastName, string emailAddress, int age, int daysInCourse[], DegreeProgram degreeprogram) {
 	this->studentID = studentID;
 	this->firstName = firstName;
 	this->lastName = lastName;
@@ -30,62 +30,62 @@ student::student(string studentID, string firstName, string lastName, string ema
 }
 
 //Accessor/Getter functions
-string student::getStudentID() const {
+string Student::getStudentID() const {
 	return studentID;
 }
 
-string student::getFirstName() const {
+string Student::getFirstName() const {
 	return firstName;
 }
 
-string student::getLastName() const {
+string Student::getLastName() const {
 	return lastName;
 }
 
-string student::getEmailAddress() const {
+string Student::getEmailAddress() const {
 	return emailAddress;
 }
 
-int student::getAge() const {
+int Student::getAge() const {
 	return age;
 }
 
-int student::getDaysInCourse() const {
+int Student::getDaysInCourse() const {
 	return daysInCourse;
 }
 
-DegreeProgram student::getDegreeProgram() const {
+DegreeProgram Student::getDegreeProgram() const {
 	return degreeProgram;
 }
 
 //Mutator/Setter functions
-void student::setStudentID(string studentID) {
+void Student::setStudentID(string studentID) {
 	this->studentID = studentID;
 }
 
-void student::setFirstName(string firstName) {
+void Student::setFirstName(string firstName) {
 	this->firstName = firstName;
 }
 
-void student::setLastName(string lastName) {
+void Student::setLastName(string lastName) {
 	this->lastName = lastName;
 }
 
-void student::setEmailAddress(string emailAddress) {
+void Student::setEmailAddress(string emailAddress) {
 	this->emailAddress = emailAddress;
 }
 
-void student::setAge(int age) {
+void Student::setAge(int age) {
 	this->age = age;
 }
 
-void student::setDaysInCourse(int daysInCourse1, int daysInCourse2, int daysInCourse3) {
+void Student::setDaysInCourse(int daysInCourse1, int daysInCourse2, int daysInCourse3) {
 	for (i = 0; i < 3; ++i) {
 		this->daysInCourse[i] = daysInCourse[i];
 	}
 }
 
-void student::setDegreeProgram(DegreeProgram degreeProgram) {
+void Student::setDegreeProgram(DegreeProgram degreeProgram) {
 	this->degreeProgram = degreeProgram;
 }
 
@@ -96,9 +96,9 @@ void print() const {
 			firstName << "\t" << 
 			lastName << "\t" << 
 			age << "\t" 
-			<< '{' << student::getDaysInCourse(0) << ',' <<
-			student::getDaysInCourse(1) << ',' <<
-			student::getDaysInCourse(2) << '}' << "\t" <<
+			<< '{' << Student::getDaysInCourse(0) << ',' <<
+			Student::getDaysInCourse(1) << ',' <<
+			Student::getDaysInCourse(2) << '}' << "\t" <<
 			degreeProgram << endl;
 	}
 }
