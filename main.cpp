@@ -2,7 +2,6 @@
 //
 
 #include <iostream>
-#include "degree.h"
 #include "student.h"
 #include "roster.h"
 using namespace std;
@@ -20,7 +19,12 @@ int main()
     student* classRosterArray[5];
 
 
-    // Output 
-    cout
+    // Output header info
+    cout << "Course Title: C867 - SCRIPTING AND PROGRAMMING - APPLICATIONS" << endl;
+    cout << "Programming Language Used: C++ " << endl;
+    cout << "Student ID: 011229857" << endl;
+    cout << "Student Name: Kenneth Lee" << endl;
+
+
 }
 

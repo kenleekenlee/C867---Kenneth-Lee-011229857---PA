@@ -2,7 +2,17 @@
 class student
 {
 public:
+	//Default constructor
 	student();
+
+	//Constructor
+	student(string studentID, 
+		string firstName, 
+		string lastName, 
+		string emailAddress, 
+		int age, 
+		int daysInCourse[], 
+		DegreeProgram degreeProgram);
 	
 	//Accessor/Getter functions
 	string getStudentID() const;
@@ -10,7 +20,7 @@ public:
 	string getLastName() const;
 	string getEmailAddress() const;
 	int getAge() const;
-	int getDaysInCourse(int position) const;
+	int* getDaysInCourse() const;
 	DegreeProgram getDegreeProgram() const;
 
 	//Mutator/Setter functions
@@ -19,8 +29,8 @@ public:
 	void setLastName(string lastName);
 	void setEmailAddress(string emailAddress);
 	void setAge(int age);
-	void setDaysInCourse(int position, int daysInCourse1);
-	setDegreeProgram(DegreeProgram degreeprogram);
+	void setDaysInCourse(int daysInCourse1, int daysInCourse2, int daysInCourse3);
+	setDegreeProgram(DegreeProgram degreeProgram);
 
 	//print function
 	void print() const;
@@ -32,6 +42,6 @@ private:
 	string	emailAddress;
 	int		age;
 	int		daysInCourse[3];
-	DegreeProgram	degreeprogram;
+	DegreeProgram	degreeProgram;
 };
 
