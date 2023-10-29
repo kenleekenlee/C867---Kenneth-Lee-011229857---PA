@@ -5,8 +5,10 @@
 
 using namespace std;
 
-class roster
-{
-	roster::classRosterArray
+class roster {
+
+public:
+
+
 };
 
