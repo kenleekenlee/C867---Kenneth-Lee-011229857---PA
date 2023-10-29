@@ -5,6 +5,7 @@
 #include "degree.h"
 #include "student.h"
 #include "roster.h"
+using namespace std;
 
 int main()
 {
@@ -15,6 +16,9 @@ int main()
         "A4,Erin,Black,Erin.black@comcast.net,22,50,58,40,SECURITY",
         "A5,Kenneth,Lee,klee684@wgu.edu,38,20,40,60,SOFTWARE"
     };
+
+    student* classRosterArray[5];
+
 
     // Output 
     cout
