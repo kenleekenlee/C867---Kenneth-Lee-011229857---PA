@@ -21,7 +21,7 @@ int main()
     cout << "WGU Student ID: 011229857" << endl;
     cout << "Student Name: Kenneth Lee" << endl;
 
-    //Create instate of roster
+    //Create instance of roster
     roster classRoster;
 
     //Parse student data
