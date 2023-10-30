@@ -1,4 +1,4 @@
-// C687 - Kenneth Lee 011229857 - PA.cpp : This file contains the 'main' function. Program execution begins and ends there.
+// C867 - Kenneth Lee 011229857 - PA.cpp : This file contains the 'main' function. Program execution begins and ends there.
 //
 
 #include <iostream>
