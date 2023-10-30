@@ -9,13 +9,15 @@ public:
 	//Default constructor
 	Student();
 
-	//Constructor
+	//Constructor with all parameters
 	Student(string studentID, 
 		string firstName, 
 		string lastName, 
 		string emailAddress, 
 		int age, 
-		int daysInCourse[], 
+		int daysInCourse1, 
+		int daysInCourse2,
+		int daysInCourse3,
 		DegreeProgram degreeProgram);
 	
 	//Accessor/Getter functions
@@ -24,7 +26,7 @@ public:
 	string getLastName() const;
 	string getEmailAddress() const;
 	int getAge() const;
-	int* getDaysInCourse() const;
+	int getDaysInCourse(int position) const;
 	DegreeProgram getDegreeProgram() const;
 
 	//Mutator/Setter functions
@@ -34,7 +36,7 @@ public:
 	void setEmailAddress(string emailAddress);
 	void setAge(int age);
 	void setDaysInCourse(int daysInCourse1, int daysInCourse2, int daysInCourse3);
-	setDegreeProgram(DegreeProgram degreeProgram);
+	void setDegreeProgram(DegreeProgram degreeProgram);
 
 	//print function
 	void print() const;

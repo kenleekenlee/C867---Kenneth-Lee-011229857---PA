@@ -2,55 +2,54 @@
 //
 
 #include <iostream>
-#include "student.h"
 #include "roster.h"
 using namespace std;
 
-int main()
-{
-    const string studentData[] = {
+const string studentData[] = {
         "A1,John,Smith,John1989@gm ail.com,20,30,35,40,SECURITY",
         "A2,Suzan,Erickson,Erickson_1990@gmailcom,19,50,30,40,NETWORK",
         "A3,Jack,Napoli,The_lawyer99yahoo.com,19,20,40,33,SOFTWARE",
         "A4,Erin,Black,Erin.black@comcast.net,22,50,58,40,SECURITY",
         "A5,Kenneth,Lee,klee684@wgu.edu,38,20,40,60,SOFTWARE"
-    };
+};
 
-    student* classRosterArray[5];
-
-
+int main()
+{
     // Output header info
     cout << "Course Title: C867 - SCRIPTING AND PROGRAMMING - APPLICATIONS" << endl;
     cout << "Programming Language Used: C++ " << endl;
-    cout << "Student ID: 011229857" << endl;
+    cout << "WGU Student ID: 011229857" << endl;
     cout << "Student Name: Kenneth Lee" << endl;
 
+    //Create instate of roster
+    roster classRoster;
 
+    //Parse student data
+    for (int i = 0; i < 5; ++i) {
+        classRoster.index = i;
+        classRoster.parse(studentData[i]);
+    }
 
-// pseudocode below, update program
+    //Print all students
     classRoster.printAll();
 
+    //Search through students and print invalid emails
     classRoster.printInvalidEmails();
 
+    //Print each student's average days in course:
+    for (int i = 0; i < 5; ++i) {
+        string studentID = classRoster.classRosterArray[i]->getStudentID();
+        classRoster.printAverageDaysInCourse(studentID);
+    }
 
+    //Print students with SOFTWARE degree program
+    classRoster.printByDegreeProgram(DegreeProgram::SOFTWARE);
 
-    //loop through classRosterArray and for each element:
+    classRoster.remove("A3");
 
-    classRoster.printAverageDaysInCourse(/*current_object's student id*/);
+    classRoster.printAll();
 
-
-
-Note: For the current_object's student id, use an accessor (i.e., getter) for the classRosterArray to access the student id.
-
-
-
-classRoster.printByDegreeProgram(SOFTWARE);
-
-classRoster.remove("A3");
-
-classRoster.printAll();
-
-classRoster.remove("A3");
+    classRoster.remove("A3");
 
 //expected: the above line should print a message saying such a student with this ID was not found.
 }

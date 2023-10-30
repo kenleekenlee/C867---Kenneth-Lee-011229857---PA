@@ -1,6 +1,7 @@
 #include "student.h"
-#include "degree.h"
 #include <string>
+#include <iostream>
+
 using namespace std;
 
 //Default constructor
@@ -13,49 +14,49 @@ Student::Student() {
 	this->daysInCourse[0] = -1;
 	this->daysInCourse[1] = -1;
 	this->daysInCourse[2] = -1;
-	this->degreeProgram;
+	degreeProgram = DegreeProgram::SOFTWARE;
 }
 
 //Constructor with all parameters
-Student::Student(string studentID, string firstName, string lastName, string emailAddress, int age, int daysInCourse[], DegreeProgram degreeprogram) {
-	this->studentID = studentID;
-	this->firstName = firstName;
-	this->lastName = lastName;
-	this->emailAddress = emailAddress;
-	this->age = age;
-	this->daysInCourse[0] = daysInCourse[0];
-	this->daysInCourse[1] = daysInCourse[1];
-	this->daysInCourse[2] = daysInCourse[2];
-	this->degreeProgram = degreeProgram;
+Student::Student(string studentID, string firstName, string lastName, string emailAddress, int age, int daysInCourse1, int daysInCourse2, int daysInCourse3, DegreeProgram degreeProgram) {
+		this->studentID = studentID;
+		this->firstName = firstName;
+		this->lastName = lastName;
+		this->emailAddress = emailAddress;
+		this->age = age;
+		this->daysInCourse[0] = daysInCourse1;
+		this->daysInCourse[1] = daysInCourse2;
+		this->daysInCourse[2] = daysInCourse3;
+		this->degreeProgram = degreeProgram;
 }
 
 //Accessor/Getter functions
 string Student::getStudentID() const {
-	return studentID;
+	return this->studentID;
 }
 
 string Student::getFirstName() const {
-	return firstName;
+	return this->firstName;
 }
 
 string Student::getLastName() const {
-	return lastName;
+	return this->lastName;
 }
 
 string Student::getEmailAddress() const {
-	return emailAddress;
+	return this->emailAddress;
 }
 
 int Student::getAge() const {
-	return age;
+	return this->age;
 }
 
-int Student::getDaysInCourse() const {
-	return daysInCourse;
+int Student::getDaysInCourse(int position) const {
+	return this->daysInCourse[position];
 }
 
 DegreeProgram Student::getDegreeProgram() const {
-	return degreeProgram;
+	return this->degreeProgram;
 }
 
 //Mutator/Setter functions
@@ -80,9 +81,9 @@ void Student::setAge(int age) {
 }
 
 void Student::setDaysInCourse(int daysInCourse1, int daysInCourse2, int daysInCourse3) {
-	for (i = 0; i < 3; ++i) {
-		this->daysInCourse[i] = daysInCourse[i];
-	}
+	this->daysInCourse[0] = daysInCourse1;
+	this->daysInCourse[1] = daysInCourse2;
+	this->daysInCourse[2] = daysInCourse3;
 }
 
 void Student::setDegreeProgram(DegreeProgram degreeProgram) {
@@ -90,15 +91,27 @@ void Student::setDegreeProgram(DegreeProgram degreeProgram) {
 }
 
 //print function
-void print() const {
-	for (i = 0; i < 3; ++i) {
-		cout << studentID << "\t" << 
-			firstName << "\t" << 
-			lastName << "\t" << 
-			age << "\t" 
-			<< '{' << Student::getDaysInCourse(0) << ',' <<
-			Student::getDaysInCourse(1) << ',' <<
-			Student::getDaysInCourse(2) << '}' << "\t" <<
-			degreeProgram << endl;
+void Student::print() const {
+	cout << studentID << "\t" << firstName << "\t" << lastName << "\t" << age << "\t{";
+	
+	for (int i = 0; i < 3; ++i) {
+		if (i != 2) {
+			cout << getDaysInCourse(i) << ", ";
+		}
+		else {
+			cout << getDaysInCourse(i);
+		}
+	}
+			
+	cout << "}\t";
+	
+	if (getDegreeProgram() == DegreeProgram::NETWORK) {
+		cout << "NETWORK" << endl;
+	}
+	else if (getDegreeProgram() == DegreeProgram::SECURITY) {
+		cout << "SECURITY" << endl;
+	}
+	else if (getDegreeProgram() == DegreeProgram::SOFTWARE) {
+		cout << "SOFTWARE" << endl;
 	}
 }
