@@ -45,12 +45,14 @@ int main()
     //Print students with SOFTWARE degree program
     classRoster.printByDegreeProgram(DegreeProgram::SOFTWARE);
 
+    //Remove A3
     classRoster.remove("A3");
 
+    //Print all (shows A3 no longer in array)
     classRoster.printAll();
 
+    //Try to remove A3, print message saying not found
     classRoster.remove("A3");
 
-//expected: the above line should print a message saying such a student with this ID was not found.
 }
 
